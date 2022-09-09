@@ -19,6 +19,12 @@ Not only is it fast, it supports a vast amount of neural net architectures.
 
 Thus, given almost any neural net for visual problems, you can ingest, infer, and output incredbily quickly.
 
+## Why Care?
+
+There are two extremes that appear to be common in visual AI usage in the real world. Experimental algorithms that are impressive but run slowly 
+in real life data pipelines, and then highly rigid optimized pipelines. What Deepstream lets you do is cross the gap. You can run research-y neural networks hot off the grill in your preferred deep learning framework, and then have them running at high fps in a real life inference situation.
+
+
 ## Why so sad?
 Deepstream can be incredibly frustrating to get started with. Although there is documentation and support from the Nvidia forums, it can still be very challenging to even get it working.
 
@@ -37,6 +43,17 @@ After working with Deepstream for a year, I have found my way to use it. I'll sh
 * VSCode or some IDE that supports remote container development
 * Docker
 * Nvidia Docker
+
+## Workshop
+
+### Remote Development
+First, you must get remote development set up. Don't even try to set up Deepstream on your local machine. There are way too many dependencies.
+
+You main guides for this:
+
+* https://code.visualstudio.com/docs/remote/containers
+* https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream
+
 
 
 
