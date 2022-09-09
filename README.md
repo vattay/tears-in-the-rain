@@ -39,6 +39,7 @@ After working with Deepstream for a year, I have found my way to use it. I'll sh
 
 ## Pre-requisites
 
+* Linux (No WSL!)
 * Nvidia GPU
 * VSCode or some IDE that supports remote container development
 * Docker
@@ -46,13 +47,40 @@ After working with Deepstream for a year, I have found my way to use it. I'll sh
 
 ## Workshop
 
+### A little on pre-requisites
+Nvidia Docker is tricky to get set up. Different linux distributions have different packages for this. Even sub varietes like PopOS do.
+Due to the cgroups changes in modern linux, you may have to use this kernel parameter
+
+https://github.com/NVIDIA/nvidia-docker/issues/1447
+
 ### Remote Development
-First, you must get remote development set up. Don't even try to set up Deepstream on your local machine. There are way too many dependencies.
+First, you must get remote development set up. Don't even try to set up Deepstream on your local machine. There are way too many fragile dependencies.
 
 You main guides for this:
 
 * https://code.visualstudio.com/docs/remote/containers
 * https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream
+
+I'll show you how it's set up in this repository, take a look at the .devcontainer folder. That fully describes the development container setup.
+
+### Access Control
+Giving access to the docker container that deepstream is running to expose an X window is not easy. If you have a workstation on a secured network, all your troubles can be solved with a simple 
+
+  xhost +
+  
+Run in a terminal *not* in the container. 
+
+### Running your first deepstream sample
+
+Move in terminal or open the `opt/nvidia/deepstream/deepstream/samples/apps/sample_apps/deepstream_test1`.
+
+We just need to build then
+
+  make
+  
+Then we can run the app
+
+
 
 
 
