@@ -49,7 +49,7 @@ After working with Deepstream for a year, I have found my way to use it. I'll sh
 
 ### A little on pre-requisites
 Nvidia Docker is tricky to get set up. Different linux distributions have different packages for this. Even sub varietes like PopOS do.
-Due to the cgroups changes in modern linux, you may have to use this kernel parameter
+Due to the cgroups changes in modern linux, you may have to use this kernel parameter to disable the unified cgroups.
 
 https://github.com/NVIDIA/nvidia-docker/issues/1447
 
@@ -70,7 +70,7 @@ Giving access to the docker container that deepstream is running to expose an X 
   
 Run in a terminal *not* in the container. 
 
-### Running your first deepstream sample
+### Running your first deepstream sample, test 1
 
 Move in terminal or open the `opt/nvidia/deepstream/deepstream/samples/apps/sample_apps/deepstream_test1`.
 
@@ -80,6 +80,21 @@ We just need to build then
   
 Then we can run the app
 
+  ./deepstream-test1-app opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
+  
+So that demonstrates one of the simplest possible applications of deepstream, given a file, run inference on it. It only run on local files, so let's expand on that
+
+### Running your expanded deepstream sample, test 2
+
+  cd /opt/nvidia/deepstream/deepstream/sources/apps/sample_apps/deepstream-test2
+  
+Build it
+
+  make
+
+Run it
+
+  ./deepstream-test2-app opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
 
 
 
