@@ -70,9 +70,12 @@ Giving access to the docker container that deepstream is running to expose an X 
   
 Run in a terminal *not* in the container. 
 
-### Running your first deepstream sample, test 1
+### Sample Apps
+A great way to get a feel for how DS works is building, running, and exploring the test apps. It will show you what it can do and provides useful code examples.
 
-Move in terminal or open the `opt/nvidia/deepstream/deepstream/samples/apps/sample_apps/deepstream_test1`.
+#### Running Deepstream Test 1
+
+Move in terminal or open the `/opt/nvidia/deepstream/deepstream/samples/apps/sample_apps/deepstream_test1`.
 
 We just need to build then
 
@@ -80,11 +83,11 @@ We just need to build then
   
 Then we can run the app
 
-    ./deepstream-test1-app opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
+    ./deepstream-test1-app /opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
   
 So that demonstrates one of the simplest possible applications of deepstream, given a file, run inference on it. It only run on local files, so let's expand on that
 
-### Running your expanded deepstream sample, test 2
+#### Running Deepstream Test 2 - More than One Neural Network
 
     cd /opt/nvidia/deepstream/deepstream/sources/apps/sample_apps/deepstream-test2
   
@@ -94,10 +97,19 @@ Build it
 
 Run it
 
-    ./deepstream-test2-app opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
+    ./deepstream-test2-app /opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
+    
+#### Running Deepstream Test 3 - Multiple streams and RTSP
 
+    cd /opt/nvidia/deepstream/deepstream/sources/apps/sample_apps/deepstream-test3
+    
+Build it
 
+    make
 
+Run it
+
+    ./deepstream-test3-app file:///opt/nvidia/deepstream/deepstream/samples/streams/sample_1080p_h265.mp4 file:///opt/nvidia/deepstream/deepstream/samples/streams/sample_qHD.mp4
 
 
 
