@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  titr:
+    init: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspaces/tears-in-the-rain:cached
+      - /var/run/docker.sock:/var/run/docker-host.sock
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority.docker:/home/vscode/.Xauthority
+      - ~/.ssh:/root/.ssh:cached
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+
