@@ -19,6 +19,12 @@ Not only is it fast, it supports a vast amount of neural net architectures.
 
 Thus, given almost any neural net for visual problems, you can ingest, infer, and output incredbily quickly.
 
+## Why Care?
+
+There are two extremes that appear to be common in visual AI usage in the real world. Experimental algorithms that are impressive but run slowly 
+in real life data pipelines, and then highly rigid optimized pipelines. What Deepstream lets you do is cross the gap. You can run research-y neural networks hot off the grill in your preferred deep learning framework, and then have them running at high fps in a real life inference situation.
+
+
 ## Why so sad?
 Deepstream can be incredibly frustrating to get started with. Although there is documentation and support from the Nvidia forums, it can still be very challenging to even get it working.
 
@@ -33,10 +39,49 @@ After working with Deepstream for a year, I have found my way to use it. I'll sh
 
 ## Pre-requisites
 
+* Linux (No WSL!)
 * Nvidia GPU
 * VSCode or some IDE that supports remote container development
 * Docker
 * Nvidia Docker
+
+## Workshop
+
+### A little on pre-requisites
+Nvidia Docker is tricky to get set up. Different linux distributions have different packages for this. Even sub varietes like PopOS do.
+Due to the cgroups changes in modern linux, you may have to use this kernel parameter
+
+https://github.com/NVIDIA/nvidia-docker/issues/1447
+
+### Remote Development
+First, you must get remote development set up. Don't even try to set up Deepstream on your local machine. There are way too many fragile dependencies.
+
+You main guides for this:
+
+* https://code.visualstudio.com/docs/remote/containers
+* https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream
+
+I'll show you how it's set up in this repository, take a look at the .devcontainer folder. That fully describes the development container setup.
+
+### Access Control
+Giving access to the docker container that deepstream is running to expose an X window is not easy. If you have a workstation on a secured network, all your troubles can be solved with a simple 
+
+  xhost +
+  
+Run in a terminal *not* in the container. 
+
+### Running your first deepstream sample
+
+Move in terminal or open the `opt/nvidia/deepstream/deepstream/samples/apps/sample_apps/deepstream_test1`.
+
+We just need to build then
+
+  make
+  
+Then we can run the app
+
+
+
 
 
 
