@@ -76,25 +76,25 @@ Move in terminal or open the `opt/nvidia/deepstream/deepstream/samples/apps/samp
 
 We just need to build then
 
-  make
+    make
   
 Then we can run the app
 
-  ./deepstream-test1-app opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
+    ./deepstream-test1-app opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
   
 So that demonstrates one of the simplest possible applications of deepstream, given a file, run inference on it. It only run on local files, so let's expand on that
 
 ### Running your expanded deepstream sample, test 2
 
-  cd /opt/nvidia/deepstream/deepstream/sources/apps/sample_apps/deepstream-test2
+    cd /opt/nvidia/deepstream/deepstream/sources/apps/sample_apps/deepstream-test2
   
 Build it
 
-  make
+    make
 
 Run it
 
-  ./deepstream-test2-app opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
+    ./deepstream-test2-app opt/nvidia/deepstream/deepstream/samples/streams/sample_720p.h264
 
 
 
