@@ -110,6 +110,8 @@ Build it
 Run it
 
     ./deepstream-test3-app file:///opt/nvidia/deepstream/deepstream/samples/streams/sample_1080p_h265.mp4 file:///opt/nvidia/deepstream/deepstream/samples/streams/sample_qHD.mp4
+    
+
 
 
 
